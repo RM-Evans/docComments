@@ -1,20 +1,25 @@
 package docComments;
 
+
 public class television {
-private int ID;
-private int count;
+	
+private int dID;
+private String manufacturer;
 private int resolution;
 private int refreshRate;
-private int dimensions;
+private int size;
+
+private static int count = 0;
+private static final int SEED = 001; 
 
 
-
-public television(int iD, int count, int resolution, int refreshRate, int dimensions) {
+public television( int manufacturer, int resolution, int refreshRate, int size ) {
 	
-	this.ID = iD;
+	count++;  // Increment the static count
+    this.dID = SEED + count;  // Generate a unique ID for the device
 	this.resolution = resolution;
 	this.refreshRate = refreshRate;
-	this.dimensions = dimensions;
+	this.size = size;
 }
 
 public int getResolution() {
@@ -23,24 +28,28 @@ public int getResolution() {
 public void setResolution(int resolution) {
 	this.resolution = resolution;
 }
+
 public int getRefreshRate() {
 	return refreshRate;
 }
 public void setRefreshRate(int refreshRate) {
 	this.refreshRate = refreshRate;
 }
+
 public int getDimensions() {
-	return dimensions;
+	return size;
 }
 public void setDimensions(int dimensions) {
-	this.dimensions = dimensions;
+	this.size = dimensions;
 }
 
-public int getCount() {
-	return count;
+public String getManufacturer() {
+	return manufacturer;
 }
 
-public void setCount(int count) {
-	this.count = count;
+public void setManufacturer(String manufacturer) {
+	this.manufacturer = manufacturer;
 }
+
+
 }
