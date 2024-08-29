@@ -36,11 +36,11 @@ public void setRefreshRate(int refreshRate) {
 	this.refreshRate = refreshRate;
 }
 
-public int getDimensions() {
+public int getSize() {
 	return size;
 }
-public void setDimensions(int dimensions) {
-	this.size = dimensions;
+public void setSize(int size) {
+	this.size = size;
 }
 
 public String getManufacturer() {
