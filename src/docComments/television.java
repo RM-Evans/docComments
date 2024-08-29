@@ -16,10 +16,18 @@ private static final int SEED = 001;
 public television( int manufacturer, int resolution, int refreshRate, int size ) {
 	
 	count++;  // Increment the static count
-    this.dID = SEED + count;  // Generate a unique ID for the device
+    this.setdID(SEED + count);  // Generate a unique ID for the device
 	this.resolution = resolution;
 	this.refreshRate = refreshRate;
 	this.size = size;
+}
+
+public int getdID() {
+	return dID;
+}
+
+public void setdID(int dID) {
+	this.dID = dID;
 }
 
 public int getResolution() {
