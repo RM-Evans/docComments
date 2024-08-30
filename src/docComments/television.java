@@ -3,31 +3,32 @@ package docComments;
 
 public class Television {
 	
-private int dID;
+private int ID;
 private String manufacturer;
 private int resolution;
 private int refreshRate;
 private int size;
 
 private static int count = 0;
-private static final int SEED = 001; 
+private static final int SEED = 991; 
 
 
-public Television( int manufacturer, int resolution, int refreshRate, int size ) {
+public Television( String manufacturer, int resolution, int refreshRate, int size ) {
 	
 	count++;  // Increment the static count
-    this.setdID(SEED + count);  // Generate a unique ID for the device
+    this.setId(SEED + count);  // Generate a unique ID for the device
+    this.manufacturer = manufacturer;
 	this.resolution = resolution;
 	this.refreshRate = refreshRate;
 	this.size = size;
 }
 
-public int getdID() {
-	return dID;
+public int getId() {
+	return ID;
 }
 
-public void setdID(int dID) {
-	this.dID = dID;
+public void setId(int ID) {
+	this.ID = ID;
 }
 
 public int getResolution() {
@@ -60,7 +61,8 @@ public void setManufacturer(String manufacturer) {
 }
 
 public String toString(){
-	return this.manufacturer + " " + this.size + "\" " + this.resolution + "p " + this.refreshRate + "hz";
+	return this.manufacturer + " | " + this.size + "\" | " + this.resolution + "p | " 
++ this.refreshRate + "hz | id: " + this.ID ;
 }
 
 
