@@ -1,10 +1,13 @@
 package docComments;
 
-public class televisionApp {
+import java.util.ArrayList;
+
+public class TelevisionApp {
 	public static void main(String[] args)
 	{
-	int SID;
-	System.out.println("hello sam");
-	System.out.println("hey big boy");
+		
+		
+		ArrayList<Television> tvs = new ArrayList<Television>();
+	
 	}
 }

@@ -1,7 +1,7 @@
 package docComments;
 
 
-public class television {
+public class Television {
 	
 private int dID;
 private String manufacturer;
@@ -13,7 +13,7 @@ private static int count = 0;
 private static final int SEED = 001; 
 
 
-public television( int manufacturer, int resolution, int refreshRate, int size ) {
+public Television( int manufacturer, int resolution, int refreshRate, int size ) {
 	
 	count++;  // Increment the static count
     this.setdID(SEED + count);  // Generate a unique ID for the device
