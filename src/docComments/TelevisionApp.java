@@ -22,29 +22,23 @@ public class TelevisionApp {
 		tvs.add(onn);
 		tvs.add(insignia);
 
-		//String test = sammysung.toString();
-		//System.out.println(test);
+		// String test = sammysung.toString();
+		// System.out.println(test);
 
 		while (menuOption != 6) {
-			
-			System.out.println("\n1. Show all TVs \n2. Add a TV \n3. Find a TV \n4. Delete a TV \n5. Number of TVs \n6. Exit");
-			System.out.println("Enter your selection: ");
-
+			printMenu();
 			menuOption = scan.nextInt();
-
-			System.out.println();
 
 //		TODO: Provide the functionality chosen by the user.
 //		Use private methods to print the menu and to display, find, add, or delete devices.
 
 			switch (menuOption) {
-			case 1: { // Show all TV's
-				
-				showAllTvs(tvs);
-				
-				break;
 
+			case 1: { // Show all TV's
+				showAllTvs(tvs);
+				break;
 			}
+
 			case 2: { // Add a TV
 
 				break;
@@ -65,11 +59,8 @@ public class TelevisionApp {
 				break;
 			}
 			case 4: { // Delete a TV
-//		TODO:SAM
-//		Whenever the user wants to find or delete a device s/he should be prompted for the id number.
-//		If the user provides an id number that doesn’t exist, an appropriate message should be displayed.
-//		If the id number could be found, the device information should be displayed as part of the response.
 
+				deleteTV(tvs, providedId);
 				break;
 			}
 			case 5: { // # of TV's
@@ -96,24 +87,26 @@ public class TelevisionApp {
 
 	}
 
-	private static void deleteTV(ArrayList<Television> tvs) {
-//		TODO: SAM
-//		Reference the findTvById method to finish this function.
-//		Research ArrayList methods that can help you accomplish this task.
-//		
-		
-		
-		
-//		System.out.println(.toString() + "has been deleted");
+	private static void deleteTV(ArrayList<Television> tvs, int providedId) {
 
+		Scanner scnr = new Scanner(System.in);
+		System.out.println("Id: ");
+		providedId = scnr.nextInt();
+
+		for (int i = 0; i < tvs.size(); i++) {
+			if (tvs.get(i).getId() == providedId) {
+				System.out.println(tvs.get(i).toString() + " has been deleted");
+				tvs.remove(i);
+				return;
+			}
+		}
+		System.out.println("The id " + providedId + " could not be found");
 	}
 
 	private static void getTV(int tvID) {
 
 //		TODO: SAM
-		//System.out.println(.toString());
-		
-		
+		// System.out.println(.toString());
 
 	}
 
@@ -133,9 +126,22 @@ public class TelevisionApp {
 	}
 
 	private static void showAllTvs(ArrayList<Television> tvs) {
-		for (int i = 0; i < tvs.size(); i++) {
-			System.out.println(tvs.get(i));
+		if (tvs.size() > 0) {
+			for (int i = 0; i < tvs.size(); i++) {
+				System.out.println(tvs.get(i));
+			}
+		} else {
+			System.out.println("No TVs for you :'(");
 		}
 	}
 
+	public static void printMenu() {
+		System.out.println("\n1. Show all TVs");
+		System.out.println("2. Add a TV");
+		System.out.println("3. Find a TV");
+		System.out.println("4. Delete a TV");
+		System.out.println("5. Number of TVs");
+		System.out.println("6. Exit");
+		System.out.println("Enter your selection:");
+	}
 }
