@@ -14,7 +14,7 @@ public class Television {
 	private int size;
 
 	private static int count = 0;
-	private static final int SEED = 991;
+	private static final int SEED = 9999991;
 
 	/**
 	 * Constructs a new Television object with the specified manufacturer,

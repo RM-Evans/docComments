@@ -158,6 +158,5 @@ public class TelevisionApp {
 		System.out.println("Number of TV's: " + tvs.size());
 	}
 
-	// private static void getTV(int tvID) {}
 
 }
